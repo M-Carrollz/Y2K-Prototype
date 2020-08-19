@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TriggerBoxCollapse : MonoBehaviour
 {
+    public GameObject archiveBoxStack;
+    public GameObject archuveBoxStackAnimated;
     public bool hasTriggerbeenTriggered = false;
     public GameObject uIController;
 
@@ -14,6 +16,8 @@ public class TriggerBoxCollapse : MonoBehaviour
         if (other.tag == "Player" && !hasTriggerbeenTriggered)
         {
             //Play Box Falling Annimation
+            archiveBoxStack.SetActive(false);
+            archuveBoxStackAnimated.SetActive(true);
             hasTriggerbeenTriggered = true;
             GameObject.FindObjectOfType<UIController>().Dialogue("*Sigh*... Who stacked these?\nLooks like I'll have to take the long way round.", 4); //Show Dialogue saying the door is locked.
         }
