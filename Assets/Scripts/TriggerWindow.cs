@@ -5,6 +5,8 @@ using UnityEngine;
 public class TriggerWindow : MonoBehaviour
 {
     public GameObject uIController;
+    public GameObject bSODAudio;
+    public GameObject keyPressAudio;
 
     //Runs when the Player moves into this trigger
     void OnTriggerEnter(Collider other)
@@ -34,7 +36,9 @@ public class TriggerWindow : MonoBehaviour
         {
             // Open BSOD
             //Debug.Log("F");
-            GameObject.FindObjectOfType<UIController>().bSOD.SetActive(true); ;
+            keyPressAudio.SetActive(true);
+            GameObject.FindObjectOfType<UIController>().bSOD.SetActive(true); 
+            bSODAudio.SetActive(true);
         }
 
     }
