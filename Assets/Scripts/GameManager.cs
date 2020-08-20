@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -68,6 +69,18 @@ public class GameManager : MonoBehaviour
         if (Time.time - animatedLightTimer > animatedLightDisplayLength)
         {
             animatedLights.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) //Restart Level
+        {
+            //Debug.Log("Reset Level");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) //Quit Game
+        {
+            Debug.Log("Quit Game");
+            Application.Quit();
         }
 
     }
